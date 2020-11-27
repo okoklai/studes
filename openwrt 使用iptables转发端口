@@ -1,0 +1,1 @@
+iptables -t nat -I PREROUTING -i pppoe-wan -p tcp --dport 10808 -j DNAT --to-destination aga.nayun.xyz:30002
