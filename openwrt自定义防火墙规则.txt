@@ -1,0 +1,5 @@
+#禁止内网访问公网某个IP或域名
+iptables -I FORWARD -d 8.8.8.8 -j DROP
+iptables -I FORWARD -d 8.8.4.4 -j DROP
+#端口转发，将10809端口转发至hostyun.kxsw.fun:443
+iptables -t nat -A PREROUTING -p tcp --dport 10809 -j DNAT --to-destination hostyun.kxsw.fun:443
